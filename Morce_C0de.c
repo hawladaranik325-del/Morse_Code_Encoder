@@ -1,0 +1,32 @@
+#include <stdio.h>
+void main()
+{
+    int i, j;
+    char messagein[100];
+    char Morse[26][5] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
+                         "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
+                         "..-", "...-", ".--", "-..-", "-.--", "--.."};
+
+    printf("What is the message that you want to encode? \n");
+    fgets(messagein, sizeof(messagein), stdin);  
+
+    for (i=0;i<100;i++)
+    {
+        if (messagein[i] == '\0' || messagein[i] == '\n')
+        {
+            break;
+        }
+        else
+        {
+            if ((messagein[i] > 96) && (messagein[i] < 123))
+            {
+                j = messagein[i] - 97;
+                printf("%s ", Morse[j]);
+            }
+            else
+            {
+                printf("%c", messagein[i]);
+            }
+        }
+    }
+}
