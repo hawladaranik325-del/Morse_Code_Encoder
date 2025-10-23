@@ -12,7 +12,7 @@ void main()
 
     for (i=0;i<100;i++)
     {
-        if (messagein[i] == '\0' || messagein[i] == '\n')
+        if (messagein[i] == '\0')
         {
             break;
         }
